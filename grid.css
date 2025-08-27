@@ -1,0 +1,31 @@
+#grid-container{
+  padding: 40rem 15rem 10rem 15rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 60rem;
+  width: 60rem;
+
+}
+#cells{
+  border: 3px solid brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: bold;
+background-color: white;
+ 
+}
+  
+body {
+  background-image: repeating-linear-gradient(
+    90deg,
+    #8B4513 0px,
+    #8B4513 100px,
+    #A0522D 100px,
+    #A0522D 200px
+  );
+}
+
+
