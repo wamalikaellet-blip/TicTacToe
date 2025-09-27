@@ -1,42 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="grid.css" type="text/css" media="all" />
-    <title>TicTacToe</title>
-    meta
-  </head>
-  <body>
-    <h1 id="heading">TicTacToe</h1>
-    <div id="grid-container">
-      <div id="cells">
-        
-      </div>
-  <div id="cells">
-        
-      </div>
-  <div id="cells">
-        
-      </div>
-  <div id="cells">
-        
-      </div>
-  <div id="cells">
-        
-      </div>
-  <div id="cells">
-        
-      </div>
-  <div id="cells">
-        
-      </div>
-  <div id="cells">
-        
-      </div>
-  <div id="cells">
-        
-      </div>
-    </div>
-  </body>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="grid.css" type="text/css" media="all" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+        <title>Tic Tac Toe</title>
+    </head>
+    <body>
+        <h1 id="heading">Tic Tac Toe</h1>
+        <h2 id="heading2">A Classic Board Game</h2>
+
+        <h3 id="legendHeading">SCORES!</h3>
+        <div id="scoreText">
+            <div id="playerXText">
+                PlayerX
+                <span id="playerScore">0</span>
+            </div>
+            <div id="tieText">
+                Ties
+                <span id="tieScore">0</span>
+            </div>
+            <div id="playerOText">
+                PlayerO
+                <span id="computerScore">0</span>
+            </div>
+        </div>
+        <i id="resetScores" class="fa-solid fa-arrows-rotate"></i>
+
+        <div id="gameStatus"></div>
+        <div id="grid-container">
+            <div class="cells"></div>
+            <div class="cells"></div>
+            <div class="cells"></div>
+            <div class="cells"></div>
+            <div class="cells"></div>
+            <div class="cells"></div>
+            <div class="cells"></div>
+            <div class="cells"></div>
+            <div class="cells"></div>
+        </div>
+        <div id="button-container">
+            <button id="playAgainButton">Play Again</button>
+            <button id="restartGameButton">Restart Game</button>
+        </div>
+
+        <script type="text/javascript" charset="utf-8" src="script.js"></script>
+
+        <footer>Crafted by javascript masters</footer>
+    </body>
 </html>

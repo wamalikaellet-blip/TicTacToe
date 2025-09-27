@@ -1,31 +1,209 @@
-#grid-container{
-  padding: 40rem 15rem 10rem 15rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  height: 60rem;
-  width: 60rem;
-
-}
-#cells{
-  border: 3px solid brown;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
-  font-weight: bold;
-background-color: white;
- 
-}
-  
 body {
-  background-image: repeating-linear-gradient(
-    90deg,
-    #8B4513 0px,
-    #8B4513 100px,
-    #A0522D 100px,
-    #A0522D 200px
-  );
+    background-color: #422510c3;
+    font-family: "Georgia", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
 }
 
+#heading {
+    font-size: 2.5em; /* A slightly smaller heading for better spacing */
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 5px; /* Reduced margin to bring the grid closer */
+}
 
+#grid-container {
+    padding: 0; /* Removed excessive padding */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 300px; /* Reduced grid size to fit on screen */
+    width: 300px; /* Reduced grid size to fit on screen */
+    border: 10px solid #8b4513; /* A darker wood border */
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Adds a shadow for depth */
+}
+
+.cells {
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: #deb887; /* A light, sandy brown for the cells */
+    color: #5c4033;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cells:hover {
+    background-color: #cda475; /* Slightly darker on hover for an interactive effect */
+}
+#gameStatus {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#scores {
+    border: none;
+    border-radius: 10px; /* A softer, more modern border-radius */
+    padding: 15px 30px; /* Increased padding for more space */
+    margin: 30px auto; /* More margin to separate it from other elements */
+    width: fit-content;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* A softer, more pronounced shadow */
+    background-color: #9a8877d4;
+    display: flex; /* Using flexbox for better alignment of elements */
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* This is for the score text glow effect */
+}
+
+#legendHeading {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: black; /* Darker text for better contrast */
+    text-transform: uppercase; /* Modern, clean look */
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#scoreText {
+    font-family: "Arial", sans-serif; /* A modern, clean font */
+    font-size: 1.5em; /* Larger font size for readability */
+    color: #555;
+    line-height: 1.6;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+
+#playerXText,
+#tieText,
+#playerOText {
+    display: grid;
+    align-items: center;
+    border-radius: 12px;
+}
+
+#playerXText {
+    background-color: #052261;
+}
+
+#tieText {
+    background-color: #7e9b49;
+}
+
+#playerOText {
+    background-color: #052261;
+}
+
+#playerScore, #tieScore, #computerScore {
+    text-align: center;
+}
+
+/* New CSS to highlight the winning score */
+#playerScore.leading {
+    color: #4caf50; /* A vibrant green color for the winning player */
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* A subtle glow effect */
+}
+
+#computerScore.leading {
+    color: #4caf50; /* A strong red color for the winning player */
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* A subtle glow effect */
+}
+
+/* New CSS to highlight the tailing score */
+#playerScore.tailing {
+    color: #ad1207; /* A vibrant green color for the winning player */
+    text-shadow: 0 0 5px rgba(177, 29, 10, 0.5); /* A subtle glow effect */
+}
+
+#computerScore.tailing {
+    color: #ad1207; /* A strong red color for the winning player */
+    text-shadow: 0 0 5px rgba(177, 29, 10, 0.5); /* A subtle glow effect */
+}
+
+#button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#playAgainButton,
+#restartGameButton {
+    background-color: #4caf50; /* Green */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px; /* Add some space between buttons */
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#playAgainButton:hover,
+#restartGameButton:hover {
+    background-color: #45a049;
+}
+
+footer {
+    margin-top: 30px;
+}
+
+/* Highlight winning cells */
+.cells.winner {
+    background-color: #ffe680 !important;
+    box-shadow: 0 0 15px #ffcc00;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Score bump animation */
+.score-bump {
+    transform: scale(1.4);
+    transition: transform 0.3s ease;
+}
+
+/* Improved leading/tailing styles */
+#playerScore.leading,
+#computerScore.leading {
+    color: #4caf50;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+}
+
+#playerScore.tailing,
+#computerScore.tailing {
+    color: #e53935;
+    text-shadow: 0 0 8px rgba(229, 57, 53, 0.6);
+}
+
+/* Buttons with hover animation */
+#playAgainButton:hover,
+#restartGameButton:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
